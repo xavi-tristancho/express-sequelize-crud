@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "./backend/**/*",
+    "./frontend/**/*",
+    "./types/**/*",
+    ".eslintrc.cjs"
+  ],
+  "compilerOptions": {    
+    "baseUrl": ".",
+    "paths": {
+      "@backend/*": ["./backend/src/*"]
+    }
+  }
+}
