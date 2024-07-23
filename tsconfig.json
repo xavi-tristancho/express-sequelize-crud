@@ -3,6 +3,10 @@
   "compilerOptions": {
     "strict": true,
     "moduleResolution": "node16",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@backend/*": ["./packages/backend/src/*"],
+      "@frontend/*": ["./packages/frontend/src/*"],
+    }
   }
 }

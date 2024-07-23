@@ -3,19 +3,11 @@ import { Request, Response } from "express";
 import { ZodSchema, ZodError } from "zod";
 
 import { ApiResponse, GenericHandler, MessageResponse } from "@backend/types";
-import {
-  DeleteResponse,
-  FindAllResponse,
-  FindOneResponse,
-  UpsertResponse,
-} from "@backend/utils/crud/types";
 
 export default function handler<Body, QueryString, PathParameters>(
   fn: (
     args: GenericHandler<Body, QueryString, PathParameters>
-  ) => Promise<
-    FindAllResponse | FindOneResponse | UpsertResponse | DeleteResponse
-  >,
+  ) => Promise<ApiResponse<Record<string, unknown> | MessageResponse>>,
   validation?: {
     bodySchema?: ZodSchema;
     querySchema?: ZodSchema;
